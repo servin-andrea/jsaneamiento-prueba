@@ -1,7 +1,7 @@
 import { isNil } from "lodash";
 import { useEffect, useCallback } from "react";
 import useGetAll from "../../api/useGetAll";
-import Navbar from "../../components/Navbar";
+import Navigation from "../../components/Navigation";
 
 const Home = () => {
   const { data, loading, error, execute } = useGetAll("excuse");
@@ -21,12 +21,12 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navigation />
       <div className="container text-center">
         <h1>Home page</h1>
         <h3>
           Show a data from:{" "}
-          <a target="_blank" href="https://excuser.herokuapp.com/">
+          <a rel="noreferrer" href="https://excuser.herokuapp.com/">
             https://excuser.herokuapp.com
           </a>
         </h3>
