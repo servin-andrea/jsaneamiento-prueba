@@ -1,6 +1,6 @@
 import { isNil } from "lodash";
 import { useEffect, useCallback } from "react";
-import useGetAll from "../../api/useGetAll";
+import useGetAll from "../../api-config/useGetAll";
 import Navigation from "../../components/Navigation";
 
 const Home = () => {
@@ -26,7 +26,7 @@ const Home = () => {
         <h1>Home page</h1>
         <h3>
           Show a data from:{" "}
-          <a rel="noreferrer" href="https://excuser.herokuapp.com/">
+          <a target="_blank" rel="noreferrer" href="https://excuser.herokuapp.com/">
             https://excuser.herokuapp.com
           </a>
         </h3>
