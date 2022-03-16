@@ -1,0 +1,208 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Ñande Y API",
+      "description": "Documentación de la API para Junta de Saneamiento",
+      "version": "0.0.1"
+    },
+    "tags": [
+        {
+            "name": "Barrios",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/api/barrios": {
+            "get": {
+                "summary": "",
+                "tags": ["Barrios"],
+                "description": "Retorna todos los barrios.\nSi se incluyen las queries ?page=x&size=x los datos se retornan paginados.\n\t",
+                "parameters": [
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "page comienza desde 0 e indica el número de página",
+                        "required": false,
+                        "type": "integer"
+                    }, 
+                    {
+                        "name": "size",
+                        "in": "query",
+                        "description": "size indica la cantidad de elementos por página",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación Exitosa",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Result"
+                            }
+                        }
+                    }, 
+                    "400": {
+                        "description": "El modelo del query es ?page=x&size=x\npage y size deben ser enteros y no deben ser menores a 0"
+                    }
+                }
+            },
+            "post": {
+                "summary": "",
+                "tags": ["Barrios"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "Nombre",
+                        "in": "formData",
+                        "description": "Nombre del barrio",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Creado correctamente",
+                        "schema": {
+                            "$ref": "#/definitions/Barrio"
+                        }
+                    },
+                    "400": {
+                        "description": "Nombre es un campo requerido"
+                    }
+                }
+            }        
+        },
+        "/api/barrios/{id}": {
+            "get": {
+                "summary": "",
+                "tags": ["Barrios"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del elemento que se quiere obtener",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación Exitosa",
+                        "schema": {
+                                "$ref": "#/definitions/Barrio"
+                        }
+                    }, 
+                    "400": {
+                        "description": "El id debe ser tipo entero"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "",
+                "tags": ["Barrios"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del elemento que se quiere eliminar",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación Exitosa"
+                    }, 
+                    "400": {
+                        "description": "El id debe ser tipo entero"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            },
+            "put": {
+                "summary": "",
+                "tags": ["Barrios"],
+                "description": "",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id del elemento que se quiere actualizar",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "Nombre",
+                        "in": "formData",
+                        "description": "Nombre del barrio",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Operación Exitosa"
+                    }, 
+                    "400": {
+                        "description": "El id debe ser tipo entero"
+                    },
+                    "404": {
+                        "description": "Elemento no encontrado"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Barrio": {
+            "type": "object",
+            "properties": {
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Nombre": {
+                    "type": "string"
+                }
+            }
+        },
+        "Result": {
+            "type": "object",
+            "properties": {
+                "previousPage": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Retorna null si la página actual es 0"
+                },
+                "actualPage": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "nextPage": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Retorna null si la página actual es la última"
+                },
+                "totalPages": {
+                    "type": "integer",
+                    "format": "int64"
+                }, 
+                "content": {
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    }
+}
