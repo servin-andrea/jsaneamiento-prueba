@@ -1,19 +1,15 @@
 import express from 'express'
 import helmet from 'helmet'
 import cors from 'cors'
-import swaggerUi from 'swagger-ui-express'
-
 
 import config from './config'
 import barrioRoutes from './resources/routes/barrio.routes'
 import { syncDb } from './utils'
-import swaggerDocument from '../swagger.json'
 
 const app = express()
 
 //settings
 app.set('port', config.PORT)
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
 syncDb()
 
 //middlewares

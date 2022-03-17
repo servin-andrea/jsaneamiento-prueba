@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines":{
+    "node": "16.x"
+  },
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "babel src -d dist",
-    "start": "node src/index.js"
+    "start": "node dist"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +28,6 @@
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^2.3.3",
     "sequelize": "^6.17.0",
-    "swagger-ui-express": "^4.3.0",
     "tedious": "^14.3.0"
   },
   "devDependencies": {
