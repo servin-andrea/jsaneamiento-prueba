@@ -1,6 +1,7 @@
 import BarrioServices from '../services/barrio.services'
 
 export const getPerPage = async (req, res) => {
+    /*
     let page = req.query.page
     let size = req.query.size
     if(!page && !size) {
@@ -18,7 +19,11 @@ export const getPerPage = async (req, res) => {
             res.status(200).json(result).end()
         }
     }
+    */
+    res.status(200).json({message:"hola"}).end()
 }
+
+/*
 
 export const getById = async (req, res) => {
     const id = req.params.id
@@ -68,3 +73,5 @@ export const deleteById = async (req, res) => {
         result? res.status(200).end() : res.status(404).end()
     }
 }
+
+*/

@@ -13,7 +13,7 @@ app.use(cors())
 // routes
 app.get('/', (req, res) => {
     res.send({
-        message: "Hello World!"
+        message: "Hello!"
     })
 })
 
