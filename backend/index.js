@@ -11,13 +11,13 @@ app.use(helmet())
 app.use(cors())
 
 // routes
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
     res.send({
         message: "Hello World!"
     })
 })
 
-app.use('/products', (req, res) => {
+app.get('/products', (req, res) => {
     res.send([
         {
             id: 1,
