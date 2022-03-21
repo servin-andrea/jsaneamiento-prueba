@@ -18,7 +18,7 @@ var _sequelize = require("sequelize");
 var _config = _interopRequireDefault(require("../config"));
 
 var ORM = new _sequelize.Sequelize(_config["default"].DB_DATABASE, _config["default"].DB_USER, _config["default"].DB_PASSWORD, {
-  dialect: 'mysql',
+  dialect: 'mssql',
   port: _config["default"].DB_PORT,
   host: _config["default"].DB_SERVER,
   logging: false,
