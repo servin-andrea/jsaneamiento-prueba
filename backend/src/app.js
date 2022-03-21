@@ -10,7 +10,7 @@ const app = express()
 
 //settings
 app.set('port', config.PORT)
-syncDb()
+//syncDb()
 
 //middlewares
 app.use(express.json())

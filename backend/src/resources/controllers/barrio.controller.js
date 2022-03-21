@@ -20,7 +20,7 @@ export const getPerPage = async (req, res) => {
         }
     }
     */
-    res.status(200).json({message:"hola"}).end()
+    res.status(200).json({message:"hola desde barrio"}).end()
 }
 
 /*

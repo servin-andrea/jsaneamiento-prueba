@@ -21,8 +21,8 @@ var _utils = require("./utils");
 
 var app = (0, _express["default"])(); //settings
 
-app.set('port', _config["default"].PORT);
-(0, _utils.syncDb)(); //middlewares
+app.set('port', _config["default"].PORT); //syncDb()
+//middlewares
 
 app.use(_express["default"].json());
 app.use(_express["default"].urlencoded({

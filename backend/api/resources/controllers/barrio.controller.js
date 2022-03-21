@@ -39,7 +39,7 @@ var getPerPage = /*#__PURE__*/function () {
             }
             */
             res.status(200).json({
-              message: "hola"
+              message: "hola desde barrio"
             }).end();
 
           case 1:
