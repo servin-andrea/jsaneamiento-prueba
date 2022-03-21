@@ -27,8 +27,6 @@
     "express": "^4.17.3",
     "helmet": "^5.0.2",
     "jsonwebtoken": "^8.5.1",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.3.3",
     "sequelize": "^6.17.0",
     "tedious": "^14.3.0"
   },
