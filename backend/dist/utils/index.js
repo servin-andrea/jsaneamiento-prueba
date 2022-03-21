@@ -24,20 +24,21 @@ var syncDb = /*#__PURE__*/function () {
             return _barrio["default"].sync();
 
           case 3:
-            _context.next = 8;
+            console.log("\n Conexion a la BD exitosa\n");
+            _context.next = 9;
             break;
 
-          case 5:
-            _context.prev = 5;
+          case 6:
+            _context.prev = 6;
             _context.t0 = _context["catch"](0);
             console.log("\n\tOcurrió un error con la conexion a la BD\n", _context.t0.message);
 
-          case 8:
+          case 9:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 5]]);
+    }, _callee, null, [[0, 6]]);
   }));
 
   return function syncDb() {
