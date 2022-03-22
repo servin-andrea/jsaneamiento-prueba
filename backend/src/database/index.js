@@ -7,7 +7,7 @@ export const ORM = new Sequelize(
     config.DB_USER, 
     config.DB_PASSWORD, 
     {
-        dialect: 'mssql',
+        dialect: 'mysql',
         port: config.DB_PORT,
         host: config.DB_SERVER,
         logging: false,

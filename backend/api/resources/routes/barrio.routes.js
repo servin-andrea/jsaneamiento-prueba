@@ -10,10 +10,10 @@ var _express = require("express");
 var _barrio = require("../controllers/barrio.controller");
 
 var router = (0, _express.Router)();
-router.get('/', _barrio.getPerPage); //router.get('/:id', getById)
-//router.post('/', create)
-//router.put('/:id', update)
-//router.delete('/:id', deleteById)
-
+router.get('/', _barrio.getPerPage);
+router.get('/:id', _barrio.getById);
+router.post('/', _barrio.create);
+router.put('/:id', _barrio.update);
+router["delete"]('/:id', _barrio.deleteById);
 var _default = router;
 exports["default"] = _default;

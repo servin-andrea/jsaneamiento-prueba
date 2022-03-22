@@ -19,19 +19,26 @@ var syncDb = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            try {
-              // await Barrios.sync();
-              console.log("\n Conexion a la BD exitosa\n");
-            } catch (error) {
-              console.log("\n\tOcurrió un error con la conexion a la BD\n", error.message);
-            }
+            _context.prev = 0;
+            _context.next = 3;
+            return _barrio["default"].sync();
 
-          case 1:
+          case 3:
+            console.log("\n Conexion a la BD exitosa\n");
+            _context.next = 9;
+            break;
+
+          case 6:
+            _context.prev = 6;
+            _context.t0 = _context["catch"](0);
+            console.log("\n\tOcurrió un error con la conexion a la BD\n", _context.t0.message);
+
+          case 9:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee);
+    }, _callee, null, [[0, 6]]);
   }));
 
   return function syncDb() {

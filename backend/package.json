@@ -28,6 +28,8 @@
     "helmet": "^5.0.2",
     "jsonwebtoken": "^8.5.1",
     "mssql": "^8.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
     "sequelize": "^6.17.0",
     "tedious": "^14.3.0"
   },
