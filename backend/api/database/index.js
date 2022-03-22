@@ -19,7 +19,7 @@ var _sequelize = require("sequelize");
 
 var _config = _interopRequireDefault(require("../config"));
 
-var tedious = _interopRequireWildcard(require("tedious"));
+var mysql2 = _interopRequireWildcard(require("mysql2"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -34,6 +34,6 @@ var ORM = new _sequelize.Sequelize(_config["default"].DB_DATABASE, _config["defa
     max: 5,
     min: 0
   },
-  dialectModule: tedious
+  dialectModule: mysql2
 });
 exports.ORM = ORM;

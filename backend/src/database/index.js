@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes } from 'sequelize'
 import config from '../config'
-import * as tedious from 'tedious'
+import * as mysql2 from 'mysql2'
 
 export const ORM = new Sequelize(
     config.DB_DATABASE, 
@@ -15,7 +15,7 @@ export const ORM = new Sequelize(
             max: 5,
             min: 0
         },
-        dialectModule: tedious,
+        dialectModule: mysql2,
     }
 )
 
